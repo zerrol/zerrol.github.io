@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css,html,绝对定位与相对定位,老生常谈,最佳实践," />
+  <meta name="keywords" content="css,html,老生常谈,最佳实践,绝对定位与相对定位," />
 
 
 
@@ -95,7 +95,7 @@
 
 
 <meta name="description" content="通过计算实现居中如果父元素的宽度是写死的话，对于绝对定位元素我们最直接的做法就是粗暴的计算元素的宽度值和容器的宽度之间的关系例如，我们先设置父容器的css属性如下：1234567.father-container &amp;#123;  height: 300px;  width: 300px;  background">
-<meta name="keywords" content="css,html,绝对定位与相对定位,老生常谈,最佳实践">
+<meta name="keywords" content="css,html,老生常谈,最佳实践,绝对定位与相对定位">
 <meta property="og:type" content="article">
 <meta property="og:title" content="老生常谈-css绝对定位元素完全居中">
 <meta property="og:url" content="http://yoursite.com/2017/06/27/老生常谈-css绝对定位元素完全居中/index.html">
@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://yoursite.com/img/17-6/27-1.png">
 <meta property="og:image" content="http://yoursite.com/img/17-6/27-2.png">
 <meta property="og:image" content="http://yoursite.com/img/17-6/27-3.png">
-<meta property="og:updated_time" content="2017-12-04T03:26:12.000Z">
+<meta property="og:updated_time" content="2017-12-04T06:12:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="老生常谈-css绝对定位元素完全居中">
 <meta name="twitter:description" content="通过计算实现居中如果父元素的宽度是写死的话，对于绝对定位元素我们最直接的做法就是粗暴的计算元素的宽度值和容器的宽度之间的关系例如，我们先设置父容器的css属性如下：1234567.father-container &amp;#123;  height: 300px;  width: 300px;  background: #eee;  margin: 10px auto;  /* 父元素block的水平居">
@@ -371,7 +371,7 @@
       
         <h1 id="通过计算实现居中"><a href="#通过计算实现居中" class="headerlink" title="通过计算实现居中"></a>通过计算实现居中</h1><p>如果父元素的宽度是写死的话，对于绝对定位元素我们最直接的做法就是粗暴的计算元素的宽度值和容器的宽度之间的关系例如，我们先设置父容器的<code>css</code>属性如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.father-container</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> auto;  <span class="comment">/* 父元素block的水平居中*/</span></div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>我们可以注意到两个地方，第一是<code>wdith</code>属性，这里我设置了父容器的宽度是300px。然后是父元素的定位方式我们设置了<code>relative</code>,这个是为了限制子元素进行绝对定位以后依然被约束在父元素之内。子元素我们设置的属性如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;  <span class="comment">/*为了更方便辨认，我设置成为了而一个方块样式*/</span></div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#222</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  </div><div class="line">  <span class="comment">/*Centering Method*/</span> </div><div class="line">  <span class="attribute">left</span>: <span class="number">100px</span>; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>实现的效果的话大致是这个样子的：<br><img src="/img/17-6/22-1.jpg" alt="居中样式"><br>如果是宽度width是流的形式的话呢，例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.father-container</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">70%</span>;    <span class="comment">/*注意这里，父元素的宽度变成了百分号*/</span></div><div class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> auto;  <span class="comment">/*父元素block的水平居中*/</span></div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>实现的效果的话大致是这个样子的：<br><img src="/img/17-6/22-1.jpg" alt="居中样式"><br>如果是宽度width是流的形式的话呢，例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.father-container</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">300px</span>; <span class="attribute">width</span>: <span class="number">70%</span>;    <span class="comment">/*注意这里，父元素的宽度变成了百分号*/</span></div><div class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> auto;  <span class="comment">/*父元素block的水平居中*/</span></div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在我们的父元素容器宽度是百分号的时候，说明他是一个自适应的宽度，这个时候我们大致计算模式是这样的：<br><img src="/img/17-6/22-2.jpg" alt="居中样式2"><br>这个时候我们的子元素就对应该这样去实现：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;  <span class="comment">/*这里子元素的宽度依然是写死的*/</span></div><div class="line">  <span class="attribute">background</span>: <span class="number">#222</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  </div><div class="line">  <span class="comment">/*Centering Method*/</span> </div><div class="line">  <span class="attribute">margin</span>: <span class="number">0px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">50px</span>;  <span class="comment">/*需要通过-50px去修正居中*/</span></div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>同理如果我们需要子元素也是自适应的百分比，那么通过修个修正的<code>margin</code>即可：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">80%</span>;  <span class="comment">/*这里子元素的宽度是自适应百分比*/</span></div><div class="line">  <span class="attribute">background</span>: <span class="number">#222</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  </div><div class="line">  <span class="comment">/*Centering Method*/</span> </div><div class="line">  <span class="attribute">margin</span>: <span class="number">0px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">40%</span>;  <span class="comment">/*需要通过margin左移40%去修正*/</span></div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>实现的效果如下：<br><img src="/img/17-6/22-3.png" alt="居中计算"></p>
@@ -422,11 +422,11 @@
           
             <a href="/tags/html/" rel="tag"># html</a>
           
-            <a href="/tags/绝对定位与相对定位/" rel="tag"># 绝对定位与相对定位</a>
-          
             <a href="/tags/老生常谈/" rel="tag"># 老生常谈</a>
           
             <a href="/tags/最佳实践/" rel="tag"># 最佳实践</a>
+          
+            <a href="/tags/绝对定位与相对定位/" rel="tag"># 绝对定位与相对定位</a>
           
         </div>
       
@@ -528,7 +528,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -539,7 +539,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -550,7 +550,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
